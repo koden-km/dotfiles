@@ -2,6 +2,5 @@
 set guioptions+=c
 
 " MacVim
----------
 " Do not use Aqua scrollbars
 set guioptions-=rL
