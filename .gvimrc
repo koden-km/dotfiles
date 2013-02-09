@@ -4,3 +4,4 @@ set guioptions+=c
 " MacVim
 " Do not use Aqua scrollbars
 set guioptions-=rL
+set transparency=5
