@@ -33,7 +33,7 @@ set background=dark
 "colorscheme default
 set ruler
 set number
-set listchars=tab:▸\.,eol:¬
+set listchars=tab:▸\.,eol:¬,trail:·,nbsp:_
 set wildmenu
 set wildmode=full
 set scrolloff=3
