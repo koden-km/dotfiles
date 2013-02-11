@@ -29,11 +29,11 @@ autocmd FileType php set expandtab
 
 " Appearance
 " ----------------
-"colorscheme default
 set background=dark
+"colorscheme default
 set ruler
 set number
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\.,eol:¬
 set wildmenu
 set wildmode=full
 set scrolloff=3
