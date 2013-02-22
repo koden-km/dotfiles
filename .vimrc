@@ -44,6 +44,7 @@ nnoremap <Leader>h :set hlsearch! hlsearch?<CR>
 nnoremap <Leader>i :set list! list?<CR>
 nnoremap <Leader>I :set autoindent! autoindent?<CR>
 nnoremap <Leader>l :ls<CR>:b<Space>
+nnoremap <Leader>L :b#<CR>
 nnoremap <Leader>n :set number! number?<CR>
 nnoremap <Leader>N :set relativenumber! relativenumber?<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
