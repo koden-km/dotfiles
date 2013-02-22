@@ -40,9 +40,9 @@ set laststatus=2
 " ----------------
 nnoremap <Space> <Nop>
 let mapleader="\<Space>"
+nnoremap <Leader>h :set hlsearch! hlsearch?<CR>
 nnoremap <Leader>i :set list! list?<CR>
 nnoremap <Leader>I :set autoindent! autoindent?<CR>
-nnoremap <Leader>h :set hlsearch! hlsearch?<CR>
 nnoremap <Leader>l :ls<CR>:b<Space>
 nnoremap <Leader>n :set number! number?<CR>
 nnoremap <Leader>N :set relativenumber! relativenumber?<CR>
@@ -50,7 +50,19 @@ nnoremap <Leader>p :set paste! paste?<CR>
 
 " File Type Extra/Overrides
 " -------------------------
-autocmd FileType php set expandtab | nnoremap <Leader>r :!php %<CR>
+if has("autocmd")
+
+    autocmd FileType php set expandtab
+    autocmd FileType php noremap <Leader>r :!php %<CR>
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+endif
 
 " Mac Terminal Note
 " -----------------
