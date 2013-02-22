@@ -30,7 +30,7 @@ autocmd FileType php set expandtab
 " Appearance
 " ----------------
 set background=dark
-"colorscheme default
+colorscheme delek
 set ruler
 set number
 set listchars=tab:▸\.,eol:¬,trail:·,nbsp:_
@@ -41,9 +41,12 @@ set laststatus=2
 
 " Leader Mappings
 " ----------------
+nnoremap <Space> <Nop>
+let mapleader="\<Space>"
 nnoremap <Leader>i :set list! list?<CR>
 nnoremap <Leader>I :set autoindent! autoindent?<CR>
 nnoremap <Leader>h :set hlsearch! hlsearch?<CR>
+nnoremap <Leader>l :ls<CR>:b<Space>
 nnoremap <Leader>n :set number! number?<CR>
 nnoremap <Leader>N :set relativenumber! relativenumber?<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
