@@ -24,9 +24,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" File type tab overrides
-autocmd FileType php set expandtab
-
 " Appearance
 " ----------------
 set background=dark
@@ -50,6 +47,10 @@ nnoremap <Leader>l :ls<CR>:b<Space>
 nnoremap <Leader>n :set number! number?<CR>
 nnoremap <Leader>N :set relativenumber! relativenumber?<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
+
+" File Type Extra/Overrides
+" -------------------------
+autocmd FileType php set expandtab | nnoremap <Leader>r :!php %<CR>
 
 " Mac Terminal Note
 " -----------------
