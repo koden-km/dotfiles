@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/kevin/Development/Solid-Engine/Go'
+let g:netrw_dirhist_2='/Users/kevin/Development/Solid-Engine/Go/src/github.com/koden-km/solid-go'
+let g:netrw_dirhist_3='/Users/kevin/Development/HTML5/WebGL/WebGL-Fundamentals'
+let g:netrw_dirhist_4='/Users/kevin/Development/HTML5/WebGL/RTSGame'
