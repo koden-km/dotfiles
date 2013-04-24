@@ -27,7 +27,8 @@ set shiftwidth=4
 " Appearance
 " ----------------
 set background=dark
-colorscheme delek
+"colorscheme delek
+colorscheme Sunburst
 set ruler
 set number
 set listchars=tab:▸\.,eol:¬,trail:·,nbsp:_
