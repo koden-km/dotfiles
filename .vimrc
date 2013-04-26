@@ -24,6 +24,7 @@ Bundle 'gmarik/vundle'
 " ----------------
 Bundle 'kien/ctrlp.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'scrooloose/nerdtree'
 
 " Runtime Paths
 " ----------------
