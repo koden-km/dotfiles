@@ -1,7 +1,36 @@
+" Init
+" ----------------
+set nocompatible
+filetype off
+
+" Vundle
+" ----------------
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+ " Vundle Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ "
+ " see :h vundle for more details or wiki for FAQ
+ " NOTE: comments after Bundle command are not allowed..
+
+" My Bundles
+" ----------------
+Bundle 'kien/ctrlp.vim'
+Bundle 'nelstrom/vim-visual-star-search'
+
 " Runtime Paths
 " ----------------
 set rtp+=$GOROOT/misc/vim
 
+" My Settings
+" ----------------
 filetype plugin indent on
 syntax on
 
