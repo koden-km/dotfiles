@@ -3,6 +3,10 @@
 # Home
 cd ~
 
+# Setup Bash
+rm -f .bash_profile
+ln -s dotfiles/.bash_profile
+
 # Setup Git
 rm -f .gitconfig
 rm -f .gitignore
@@ -15,9 +19,9 @@ ln -s dotfiles/.gitignore_global .gitignore_global
 rm -f .vimrc
 rm -f .gvimrc
 if [ -d .vim ]; then
-	rm -rf .vim
+    rm -rf .vim
 else
-	rm -f .vim
+    rm -f .vim
 fi
 ln -s dotfiles/.vimrc .vimrc
 ln -s dotfiles/.gvimrc .gvimrc
