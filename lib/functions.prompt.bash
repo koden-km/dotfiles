@@ -42,7 +42,7 @@ function build-prompt {
         fi
     fi
 
-    local prompt="\[\033]0;${title}\007\]$(color-dark-grey "\A") $auth $location$(color-dark-grey :) $(color-reset)"
+    local prompt="\[\033]0;${title}\007\]$(color-dark-grey "\A") $auth $location$(color-dark-grey " $") $(color-reset)"
 
     if [[ $(uname) == "Darwin" ]]; then
         PS1=$(echo "$prompt" | sed -E "s/[ ]+/ /g")
