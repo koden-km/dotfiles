@@ -8,7 +8,7 @@
     editor = vim
 
 [help]
-    autocorrect = 1
+    autocorrect = 0
 
 [color]
     ui = true
