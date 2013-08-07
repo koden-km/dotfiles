@@ -5,7 +5,7 @@ cd ~
 
 # Setup Bash
 rm -f .bash_profile
-ln -s dotfiles/.bash_profile
+ln -s dotfiles/.bash_profile .bash_profile
 
 # Setup Git
 rm -f .gitconfig
@@ -14,6 +14,10 @@ rm -f .gitignore_global
 ln -s dotfiles/.gitconfig .gitconfig
 #ln -s dotfiles/.gitignore .gitignore
 ln -s dotfiles/.gitignore_global .gitignore_global
+
+# Setup Screen
+rm -f .screenrc
+ln -s dotfiles/.screenrc .screenrc
 
 # Setup Vim
 rm -f .vimrc
