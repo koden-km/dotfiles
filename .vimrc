@@ -24,6 +24,7 @@ Bundle 'gmarik/vundle'
 " ----------------
 Bundle 'kien/ctrlp.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/nerdtree'
 Bundle 'shawncplus/phpcomplete.vim'
 
@@ -43,9 +44,16 @@ set nomodeline
 set nowrap
 set nobackup
 set noswapfile
-set incsearch
 set autoread
 set hidden
+set backspace=indent,eol,start
+
+" Searching
+" ---------------
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " Indentation
 " ----------------
