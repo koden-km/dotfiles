@@ -7,7 +7,7 @@ set guioptions+=c
 colorscheme Sunburst
 " Set usual font
 set guifont=Monaco:h10
-" Turn of antialias
+" Turn off antialias
 set noantialias
 " Do not use Aqua scrollbars
 set guioptions-=rL

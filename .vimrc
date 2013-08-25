@@ -44,6 +44,7 @@ set nomodeline
 set nowrap
 set nobackup
 set noswapfile
+set nostartofline
 set autoread
 set hidden
 set backspace=indent,eol,start
