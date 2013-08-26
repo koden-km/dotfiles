@@ -12,4 +12,4 @@ set noantialias
 " Do not use Aqua scrollbars
 set guioptions-=rL
 " Make window transparent
-set transparency=5
+set transparency=10
