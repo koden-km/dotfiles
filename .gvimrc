@@ -13,3 +13,5 @@ set noantialias
 set guioptions-=rL
 " Make window transparent
 set transparency=10
+" Make the unnamed clipboard the system clipboard.
+set clipboard=unnamed
