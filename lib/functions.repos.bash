@@ -1,6 +1,6 @@
 GIT_DIR_BASE="$HOME/Documents"
 GIT_DIR_GITHUB="${GIT_DIR_BASE}/GitHub"
-GIT_DIR_CODEWORX="${GIT_DIR_BASE}/Codeworx"
+GIT_DIR_CODEWORX="${HOME}/WebDev"
 GIT_DIR_CACHE=""
 
 function git-directories {

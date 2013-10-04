@@ -1,3 +1,4 @@
+shell -$SHELL
 autodetach on
 startup_message off
 defscrollback 10000

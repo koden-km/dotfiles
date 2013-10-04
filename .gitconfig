@@ -1,9 +1,10 @@
 [user]
-    name = James Harris
-    email = james.harris@icecave.com.au
+    name = Kevin Millar
+    email = koden.km@gmail.com
 
 [core]
     autocrlf = input
+    editor = vim
     excludesfile = ~/.gitignore.global
     whitespace = trailing-space,space-before-tab,tab-in-indent,tabwidth=4
 

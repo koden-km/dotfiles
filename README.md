@@ -1,5 +1,6 @@
-    cd ~
-    git clone git://github.com/jmalloc/dotfiles.git
-    cp dotfiles/.bash_profile ~
-    source ~/.bash_profile
+# Install #
 
+    cd ~
+    git clone git@github.com:koden-km/dotfiles.git
+    chmod u+x dotfiles/install.sh
+    dotfiles/install.sh

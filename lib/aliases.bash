@@ -1,23 +1,11 @@
-alias less='less -r'
-alias grep='grep --color'
+alias ls="ls -G"
+alias ll="ls -al"
+alias grep="grep --color=auto"
 
 if [[ $(uname) == "Darwin" ]]; then
-    alias ls='ls -lhG'
-else
-    alias ls='ls -lh --color --group-directories-first'
-fi
-
-if [ $(which hub 2>/dev/null) ]; then
-    alias git='hub'
-fi
-
-if [ $(which git-flow 2>/dev/null) ]; then
-    alias gf='git flow'
-    alias gfi='git checkout master && git flow init -d && git checkout develop'
-    alias gff='git flow feature'
-    alias gfr='git flow release'
-    alias gfh='git flow hotfix'
-    alias gfs='git flow support'
+    alias mac-clean-dsstore="find . -name '.DS_Store' -delete"
+    # fixing 'open with' duplicates may also need to: killall Finder
+    alias mac-fix-openwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 fi
 
 if [ -f ~/.aliases ]; then
