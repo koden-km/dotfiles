@@ -8,13 +8,17 @@ function title {
 function build-prompt {
     ESCAPE_COLOR_CODES=true
 
-    local auth=''
+    local auth=""
+    local title_auth=""
+
     if [[ "$USER" != "$DEFAULT_USERNAME" ]]; then
         auth=$(color-yellow $USER)
+        title_auth=$USER
     fi
 
     if [ "$SSH_TTY" ]; then
         auth="${auth}$(color-yellow "@\h")"
+        title_auth="${title_auth}@$(hostname)"
     fi
 
     if [[ "$auth" != "" ]]; then
@@ -59,12 +63,12 @@ function build-prompt {
             fi
 
             if [[ "$ahead" > 0 ]]; then
-                commits="${commits}${commitsSeperator}-${ahead}"
+                commits="${commits}${commitsSeperator}+${ahead}"
                 commitsSeperator="/"
             fi
 
             if ! git-clean; then
-                commits="${commits}${commitsSeparator}*"
+                commits="${commits}${commitsSeperator}*"
             fi
 
             if [ "$commits" ]; then
@@ -74,7 +78,7 @@ function build-prompt {
             location="$location $branch"
 
             local path=$(git-path)
-            if [[ "$path" != "" ]]; then
+            if [[ "$path" ]]; then
                 location="$location $(color-blue "$path")"
             fi
         fi
