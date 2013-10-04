@@ -22,7 +22,7 @@ function build-prompt {
     fi
 
     local location=$(color-blue "\w")
-    local title=""
+    local title="$(basename $(pwd))"
 
     if [ "$REAL_GIT" ]; then
         local repo=$(git-repo)
@@ -46,7 +46,32 @@ function build-prompt {
                 fi
             fi
 
-            location="$(color-magenta $repo) ${branch}"
+            location="$(color-magenta $repo)"
+
+            local ahead=$(git-commits-ahead)
+            local behind=$(git-commits-behind)
+            local commits=""
+            local commitsSeperator=""
+
+            if [[ "$ahead" > 0 ]]; then
+                commits="+$ahead"
+                commitsSeperator="/"
+            fi
+
+            if [[ "$behind" > 0 ]]; then
+                commits="${commits}${commitsSeperator}-${behind}"
+                commitsSeperator="/"
+            fi
+
+            if ! git-clean; then
+                commits="${commits}${commitsSeparator}*"
+            fi
+
+            if [ "$commits" ]; then
+                location="$location $(color-yellow "$commits")"
+            fi
+
+            location="$location $branch"
 
             local path=$(git-path)
             if [[ "$path" != "" ]]; then
@@ -57,6 +82,8 @@ function build-prompt {
 
     if [ "$WINDOW_TITLE" ]; then
         title="$WINDOW_TITLE"
+    elif [ "$title_auth" ]; then
+        title="${title} - ${title_auth}"
     fi
 
     PS1="\[\033]0;${title}\007\]$(color-dark-grey "\A")$auth $location$(color-dark-grey " $") $(color-reset)"
