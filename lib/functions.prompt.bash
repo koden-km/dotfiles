@@ -53,13 +53,13 @@ function build-prompt {
             local commits=""
             local commitsSeperator=""
 
-            if [[ "$ahead" > 0 ]]; then
-                commits="+$ahead"
+            if [[ "$behind" > 0 ]]; then
+                commits="${commits}${commitsSeperator}-${behind}"
                 commitsSeperator="/"
             fi
 
-            if [[ "$behind" > 0 ]]; then
-                commits="${commits}${commitsSeperator}-${behind}"
+            if [[ "$ahead" > 0 ]]; then
+                commits="${commits}${commitsSeperator}-${ahead}"
                 commitsSeperator="/"
             fi
 
