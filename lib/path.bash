@@ -4,4 +4,4 @@ PATH="/opt/local/bin:/opt/local/sbin:/usr/local/pear/bin:$PATH"
 # i think GOROOT of "/usr/local/go" is optional because that is the default
 export GOROOT=/opt/local/go
 # Colon seperated list of a workspaces.
-export GOPATH=$HOME/Documents/Go:$HOME/Development/Go
+export GOPATH=$HOME/Development/Go
