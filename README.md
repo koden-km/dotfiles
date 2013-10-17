@@ -11,6 +11,11 @@ ln -s dotfiles/dotfiles/.bash_profile
 # update configuration options in .bash_profile
 source ~/.bash_profile
 update-dotfiles
+
+# install vim bundles
+mkdir ~/.vim/bundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim +BundleInstall +qall
 ```
 
 ## Git Prompt
