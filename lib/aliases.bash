@@ -1,6 +1,7 @@
 alias ls="ls -G"
 alias ll="ls -al"
 alias grep="grep --color=auto"
+alias less="less -R"
 
 if [[ $(uname) == "Darwin" ]]; then
     alias mac-clean-dsstore="find . -name '.DS_Store' -delete"

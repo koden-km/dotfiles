@@ -2,13 +2,16 @@
 
 This is my personal dotfiles repository.
 
-## Install
+## Installation
 
-    cd ~
-    git clone git@github.com:koden-km/dotfiles.git
-    cp dotfiles/dotfiles/.bash_profile ~
-    source ~/.bash_profile
-    update-dotfiles
+```bash
+cd ~
+git clone git@github.com:koden-km/dotfiles.git
+ln -s dotfiles/dotfiles/.bash_profile
+# update configuration options in .bash_profile
+source ~/.bash_profile
+update-dotfiles
+```
 
 ## Git Prompt
 
