@@ -99,6 +99,7 @@ if has("autocmd")
 
     autocmd FileType php set expandtab
     autocmd FileType php noremap <Leader>r :!php %<CR>
+    autocmd FileType php set keywordprg=~/bin/php_doc.sh
 
 endif " has("autocmd")
 
