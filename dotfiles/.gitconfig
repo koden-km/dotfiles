@@ -12,7 +12,7 @@
     renames = true
 
 [help]
-    autocorrect = 20
+    autocorrect = 0
 
 [color]
     ui = auto
