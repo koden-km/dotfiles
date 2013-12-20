@@ -96,11 +96,14 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " File Type Extra/Overrides
 " -------------------------
 if has("autocmd")
+augroup filetype_php
 
+    autocmd!
     autocmd FileType php set expandtab
     autocmd FileType php noremap <Leader>r :!php %<CR>
     autocmd FileType php set keywordprg=~/bin/php_doc.sh
 
+augroup END
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
