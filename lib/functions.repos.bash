@@ -19,7 +19,7 @@ function rclone-cwx {
     local url="ssh://git@stash.codeworx.com.au:7999/${repo}.git"
 
     mkdir -p "$(dirname $dir)"
-    git clone $url
+    git clone $url $dir
 
     rcd-reindex
     rcd $repo
@@ -40,6 +40,11 @@ function ropen {
     fi
 }
 
+# Open a repo in Travis CI web interface ...
+function rtravis {
+    open https://travis-ci.org/$(git-repo)/builds
+}
+
 # Change directory into a git clone ...
 function rcd {
     local name=$1
@@ -54,16 +59,6 @@ function rcd {
 
     if [[ $count == "" ]]; then
         for base in $GIT_DIR_LIST; do
-            if [ -d "${base}/${name}" ]; then
-                matches="${base}/${name}"
-                count=1
-                break
-            fi
-        done
-    fi
-
-    if [[ $count == "" ]]; then
-        for base in $GIT_DIR_LIST; do
             if [ -d $base ]; then
                 matches=$(find $base -mindepth 2 -maxdepth 2 -type d -iname $name)
                 count=$(echo $matches | wc -w | tr -d ' ')
@@ -71,6 +66,16 @@ function rcd {
                 if [ $count -gt 0 ]; then
                     break
                 fi
+            fi
+        done
+    fi
+
+    if [[ $count -eq 0 ]]; then
+        for base in $GIT_DIR_LIST; do
+            if [ -d "${base}/${name}" ]; then
+                matches="${base}/${name}"
+                count=1
+                break
             fi
         done
     fi
@@ -89,8 +94,19 @@ function rcd {
         echo "  $(color-red)!!! $(color-dark-grey)Repository $(color-grey)${name} $(color-dark-grey)does not exist."
     else
         echo "  $(color-orange)??? $(color-dark-grey)Found $(color-grey)${count} $(color-dark-grey)repositories matching $(color-grey)${name}$(color-dark-grey):"
+        local options=""
         for repo in $matches; do
-            echo "    $(color-orange)- $(color-magenta)$(echo $repo | cut -c$(expr 2 + ${#base})-)"
+            options="$options $(echo $repo | cut -c$(expr 2 + ${#base})-)"
+        done
+
+        color-magenta
+
+        local PS3="$(color-reset): "
+        select repo in $options; do
+            if [ ! -z $repo ]; then
+                cd "${base}/${repo}"
+                break
+            fi
         done
     fi
 
