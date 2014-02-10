@@ -27,6 +27,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/nerdtree'
 Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 " Runtime Paths
 " ----------------
