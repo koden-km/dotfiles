@@ -52,7 +52,7 @@ set backspace=indent,eol,start
 
 " Searching
 " ---------------
-set nohlsearch
+set hlsearch
 set incsearch
 set ignorecase
 set smartcase
