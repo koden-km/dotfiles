@@ -101,8 +101,10 @@ augroup filetype_php
 
     autocmd!
     autocmd FileType php set expandtab
-    autocmd FileType php noremap <Leader>r :!php %<CR>
+    autocmd FileType php set colorcolumn=81,121
     autocmd FileType php set keywordprg=~/bin/php_doc.sh
+    autocmd FileType php noremap <Leader>r :!php %<CR>
+    autocmd FileType php noremap <Leader>R :!php -l %<CR>
 
 augroup END
 endif " has("autocmd")
