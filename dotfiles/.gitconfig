@@ -1,28 +1,28 @@
 [user]
-    name = Kevin Millar
-    email = koden.km@gmail.com
+	name = Kevin Millar
+	email = koden.km@gmail.com
 
 [core]
-    autocrlf = input
-    editor = vim
-    excludesfile = ~/.gitignore.global
-    whitespace = trailing-space,space-before-tab,tabwidth=4
+	autocrlf = input
+	editor = vim
+	excludesfile = ~/.gitignore.global
+	whitespace = trailing-space,space-before-tab,tabwidth=4
 
 [diff]
-    renames = true
+	renames = true
 
 [help]
-    autocorrect = 0
+	autocorrect = 0
 
 [color]
-    ui = auto
+	ui = auto
 
 [format]
-    pretty = %C(dim)%ci%C(reset) %C(dim)%p%C(reset) %C(cyan dim)%h%C(reset)%C(cyan)%d%C(reset) %C(yellow)|%C(reset) %s %C(dim)by %an %ar.%C(reset)
+	pretty = %C(dim)%ci%C(reset) %C(dim)%p%C(reset) %C(cyan dim)%h%C(reset)%C(cyan)%d%C(reset) %C(yellow)|%C(reset) %s %C(dim)by %an %ar.%C(reset)
 
 [push]
-    default = simple
+	default = simple
 
 [filter "media"]
-    clean = git-media-clean %f
-    smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

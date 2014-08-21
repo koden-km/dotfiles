@@ -3,31 +3,45 @@
 set nocompatible
 filetype off
 
-" Vundle
 " ----------------
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Vundle
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+" See Vundle docs for the supported plugin formats and repo locations.
 
-" Vundle Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" My Plugins/Bundles
+Plugin 'kien/ctrlp.vim'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'tpope/vim-commentary'
+Plugin 'scrooloose/nerdtree'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'Keithbsmiley/swift.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or :PluginUpdate
+" :PluginUpdate     - updates plugins
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-" My Bundles
-" ----------------
-Bundle 'kien/ctrlp.vim'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'tpope/vim-commentary'
-Bundle 'scrooloose/nerdtree'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'altercation/vim-colors-solarized'
+" Put your non-Plugin stuff after this line
+"
+" End Vundle
 
 " Runtime Paths
 " ----------------
