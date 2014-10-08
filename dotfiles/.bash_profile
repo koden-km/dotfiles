@@ -1,3 +1,5 @@
+HISTCONTROL=ignoreboth
+
 # Path for "rclone" to clone into ...
 GIT_DIR_GITHUB="$HOME/Documents/GitHub"
 
