@@ -1,7 +1,7 @@
 HISTCONTROL=ignoreboth
 
 # Path for "rclone" to clone into ...
-GIT_DIR_GITHUB="$HOME/Documents/GitHub"
+GIT_DIR_GITHUB="$HOME/GitHub"
 
 # Path for "rclone-cwx" to clone into ...
 GIT_DIR_CWX="$HOME/WebDev"
