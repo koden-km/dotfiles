@@ -15,7 +15,7 @@ DEFAULT_USERNAMES="kevin kmillar"
 
 export DOTFILES_REPO="$HOME/dotfiles"
 
-export PATH="~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pear/bin:$PATH"
+export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pear/bin:$PATH"
 
 # Go lang
 # i think GOROOT of "/usr/local/go" is optional because that is the default.
