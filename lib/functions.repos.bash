@@ -25,6 +25,18 @@ function rclone-cwx {
     rcd $repo
 }
 
+# Clone a Go lang repo from GitHub into the appropriate directory.
+function rclone-go {
+    local repo=$1
+    local dir="${GIT_DIR_GITHUB_GO}/${repo}"
+
+    mkdir -p "$(dirname $dir)"
+    hub clone -p $repo $dir
+
+    rcd-reindex
+    rcd $repo
+}
+
 # Open coverage reports in a browser ...
 function rcov {
     open artifacts/tests/coverage/index.html

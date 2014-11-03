@@ -6,9 +6,12 @@ GIT_DIR_GITHUB="$HOME/GitHub"
 # Path for "rclone-cwx" to clone into ...
 GIT_DIR_CWX="$HOME/WebDev"
 
+# Path for "rclone-go" to clone into ...
+GIT_DIR_GITHUB_GO="$HOME/Development/Go/src/github.com"
+
 # Directories to search when using "rcd" ...
 # This probably wont work if any of the directory names contain spaces.
-GIT_DIR_LIST="$GIT_DIR_GITHUB $GIT_DIR_CWX"
+GIT_DIR_LIST="$GIT_DIR_GITHUB $GIT_DIR_CWX $GIT_DIR_GITHUB_GO"
 
 # A space separated list of usernames considered to be "me" ...
 DEFAULT_USERNAMES="kevin kmillar"

@@ -2,11 +2,16 @@
 " ----------------
 set nocompatible
 filetype off
+filetype plugin indent off
+
+" Runtime Paths
+" ----------------
+set runtimepath+=$GOROOT/misc/vim
 
 " ----------------
 " Vundle
 " Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -43,13 +48,9 @@ filetype plugin indent on    " required
 "
 " End Vundle
 
-" Runtime Paths
-" ----------------
-set rtp+=$GOROOT/misc/vim
-
 " My Settings
 " ----------------
-filetype plugin indent on
+"filetype plugin indent on
 syntax on
 
 " Behaviour
