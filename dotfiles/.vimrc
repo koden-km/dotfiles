@@ -118,6 +118,8 @@ augroup filetype_php
     autocmd FileType php set expandtab
     autocmd FileType php set colorcolumn=81,121
     autocmd FileType php set keywordprg=~/bin/php_doc.sh
+    autocmd FileType php set makeprg=php\ -l\ %
+    autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
     autocmd FileType php noremap <Leader>r :!php %<CR>
     autocmd FileType php noremap <Leader>R :!php -l %<CR>
 
