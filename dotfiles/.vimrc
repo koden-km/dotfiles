@@ -1,3 +1,5 @@
+" Note, for a good reference see: $VIMRUNTIME/vimrc_example.vim
+
 " Init
 " ----------------
 set nocompatible
@@ -51,7 +53,9 @@ filetype plugin indent on    " required
 " My Settings
 " ----------------
 "filetype plugin indent on
-syntax on
+if &t_Co > 2 || has("gui_running")
+	syntax on
+endif
 
 " Behaviour
 " ----------------
@@ -117,6 +121,7 @@ augroup filetype_php
     autocmd!
     autocmd FileType php set expandtab
     autocmd FileType php set colorcolumn=81,121
+    autocmd FileType php set commentstring=//%s
     autocmd FileType php set keywordprg=~/bin/php_doc.sh
     autocmd FileType php set makeprg=php\ -l\ %
     autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
