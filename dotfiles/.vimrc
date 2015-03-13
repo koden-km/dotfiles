@@ -131,6 +131,11 @@ augroup filetype_php
 augroup END
 endif " has("autocmd")
 
+" Convenient command to add standard PHP project paths for use with :find, :sfind, :tabfind
+if !exists(":PhpAddPaths")
+	command PhpAddPaths set path+=src/**,test/**,vendor/**/src/**,vendor/**/test/**
+endif
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
