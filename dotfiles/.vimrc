@@ -68,6 +68,7 @@ set nostartofline
 set autoread
 set hidden
 set backspace=indent,eol,start
+set clipboard=unnamed
 
 " Searching
 " ---------------
@@ -87,7 +88,7 @@ set shiftwidth=4
 " Appearance
 " ----------------
 set background=dark
-"colorscheme delek
+"colorscheme default
 colorscheme Sunburst
 set ruler
 set number
