@@ -8,9 +8,6 @@ filetype plugin indent off
 
 " Runtime Paths
 " ----------------
-set runtimepath+=$GOROOT/misc/vim
-
-" ----------------
 " Vundle
 " Set the runtime path to include Vundle and initialize
 set runtimepath+=$HOME/.vim/bundle/Vundle.vim
@@ -29,6 +26,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'Keithbsmiley/swift.vim'
+Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 
