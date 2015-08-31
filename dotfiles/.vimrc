@@ -109,7 +109,7 @@ nnoremap <Leader>n :set number! number?<CR>
 nnoremap <Leader>N :set relativenumber! relativenumber?<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
 "if exists(":NERDTreeToggle")
-    nnoremap <Leader>t :NERDTreeToggle<CR>
+    nnoremap <Leader>f :NERDTreeToggle<CR>
 "endif " exists(":NERDTreeToggle")
 
 " File Type Extra/Overrides
