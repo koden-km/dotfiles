@@ -116,8 +116,8 @@ nnoremap <Leader>p :set paste! paste?<CR>
 " File Type Extra/Overrides
 " -------------------------
 if has("autocmd")
-augroup filetype_php
 
+augroup filetype_php
     autocmd!
     autocmd FileType php set expandtab
     autocmd FileType php set colorcolumn=81,121
@@ -127,8 +127,13 @@ augroup filetype_php
     autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
     autocmd FileType php noremap <Leader>r :!php %<CR>
     autocmd FileType php noremap <Leader>R :!php -l %<CR>
-
 augroup END
+
+augroup filetype_cs
+    autocmd!
+    autocmd FileType cs set commentstring=//%s
+augroup END
+
 endif " has("autocmd")
 
 " Convenient command to add standard PHP project paths for use with :find, :sfind, :tabfind
