@@ -24,12 +24,15 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-jdaddy'
+Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/syntastic'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'Keithbsmiley/swift.vim'
 Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'OmniSharp/omnisharp-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,6 +71,7 @@ set autoread
 set hidden
 set backspace=indent,eol,start
 set clipboard=unnamed
+set splitbelow
 
 " Searching
 " ---------------
@@ -113,6 +117,17 @@ nnoremap <Leader>p :set paste! paste?<CR>
     nnoremap <Leader>f :NERDTreeToggle<CR>
 "endif " exists(":NERDTreeToggle")
 
+" Syntastic Settings
+" -------------------
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"" continued...
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
 " File Type Extra/Overrides
 " -------------------------
 if has("autocmd")
@@ -132,13 +147,29 @@ augroup END
 augroup filetype_cs
     autocmd!
     autocmd FileType cs set commentstring=//%s
+	"don't autoselect first item in omnicomplete, show if only one item (for
+	"preview)
+	""remove preview if you don't want to see any documentation whatsoever.
+	autocmd FileType cs set completeopt=longest,menuone,preview
+	"Set autocomplete function to OmniSharp (if not using YouCompleteMe
+	"completion plugin)
+	autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+	"Automatically add new cs files to the nearest project on save
+	autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+	"show type information automatically when the cursor stops moving
+	"autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
 augroup END
 
 endif " has("autocmd")
 
 " Convenient command to add standard PHP project paths for use with :find, :sfind, :tabfind
 if !exists(":PhpAddPaths")
-	command PhpAddPaths set path+=src/**,test/**,vendor/**/src/**,vendor/**/test/**
+	command PhpAddPaths set path+=src/**,src-internal/**,src-generated/**,test/**,vendor/**/src/**,vendor/**/test/**
+endif
+
+" Convenient command to add standard CS project paths for use with :find, :sfind, :tabfind
+if !exists(":CsAddPaths")
+	command CsAddPaths set path+=Assets/Scripts/**
 endif
 
 " Convenient command to see the difference between the current buffer and the
