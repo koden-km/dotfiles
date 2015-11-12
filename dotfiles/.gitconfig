@@ -29,3 +29,6 @@
 
 [tag]
 	sort = version:refname
+
+[branch]
+	autosetuprebase = always
