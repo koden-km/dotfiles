@@ -128,6 +128,12 @@ nnoremap <Leader>p :set paste! paste?<CR>
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 
+" NERDTree Settings
+" -----------------
+" A command seprated list of regex. See: help NERDTreeIgnore
+" .meta - Unity3D meta files.
+let NERDTreeIgnore=['\.meta$']
+
 " File Type Extra/Overrides
 " -------------------------
 if has("autocmd")
