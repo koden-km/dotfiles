@@ -61,7 +61,7 @@ function git-current {
 }
 
 function git-clean {
-    $REAL_GIT status 2> /dev/null | grep "working directory clean" > /dev/null
+    $REAL_GIT status 2> /dev/null | grep "working tree clean" > /dev/null
     return $?
 }
 
