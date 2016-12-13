@@ -20,19 +20,20 @@ Plugin 'gmarik/Vundle.vim'
 " See Vundle docs for the supported plugin formats and repo locations.
 
 " My Plugins/Bundles
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-jdaddy'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'scrooloose/syntastic'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'Keithbsmiley/swift.vim'
 Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'OmniSharp/omnisharp-vim'
+" This should be good, but need to learn how to set it up.
+"Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -153,17 +154,30 @@ augroup END
 augroup filetype_cs
     autocmd!
     autocmd FileType cs set commentstring=//%s
-	"don't autoselect first item in omnicomplete, show if only one item (for
-	"preview)
-	""remove preview if you don't want to see any documentation whatsoever.
+	" Don't autoselect first item in omnicomplete, show if only one item (for preview).
+	" Remove preview if you don't want to see any documentation whatsoever.
 	autocmd FileType cs set completeopt=longest,menuone,preview
-	"Set autocomplete function to OmniSharp (if not using YouCompleteMe
-	"completion plugin)
+	" Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin).
 	autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-	"Automatically add new cs files to the nearest project on save
+	" Automatically add new cs files to the nearest project on save.
 	autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-	"show type information automatically when the cursor stops moving
+	" Show type information automatically when the cursor stops moving.
 	"autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+augroup END
+
+augroup filetype_javascript
+    autocmd!
+    autocmd FileType javascript set tabstop=4
+    autocmd FileType javascript set softtabstop=4
+    autocmd FileType javascript set shiftwidth=4
+    autocmd FileType javascript set expandtab
+    autocmd FileType javascript set colorcolumn=81,121
+    autocmd FileType javascript set commentstring=//%s
+    " autocmd FileType javascript set keywordprg=
+    autocmd FileType javascript set makeprg=./node_modules/.bin/eslint\ -f\ compact\ %
+    autocmd FileType javascript set errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %trror\ -\ %m,\%f:\ line\ %l\\,\ col\ %c\\,\ %tarning\ -\ %m,\%-G%.%#
+    " autocmd FileType javascript noremap <Leader>r :!node %<CR>
+    " autocmd FileType javascript noremap <Leader>R :!./node_modules/.bin/eslint\ %<CR>
 augroup END
 
 endif " has("autocmd")
@@ -176,6 +190,11 @@ endif
 " Convenient command to add standard CS project paths for use with :find, :sfind, :tabfind
 if !exists(":CsAddPaths")
 	command CsAddPaths set path+=Assets/Scripts/**
+endif
+
+" Convenient command to add standard JS project paths for use with :find, :sfind, :tabfind
+if !exists(":JsAddPaths")
+	command JsAddPaths set path+=src/**,test/**,.node_modules/**/src/**
 endif
 
 " Convenient command to see the difference between the current buffer and the
