@@ -115,7 +115,7 @@ nnoremap <Leader>n :set number! number?<CR>
 nnoremap <Leader>N :set relativenumber! relativenumber?<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
 "if exists(":NERDTreeToggle")
-    nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeToggle<CR>
 "endif " exists(":NERDTreeToggle")
 
 " Syntastic Settings
@@ -140,20 +140,20 @@ let NERDTreeIgnore=['\.meta$']
 if has("autocmd")
 
 augroup filetype_php
-    autocmd!
-    autocmd FileType php set expandtab
-    autocmd FileType php set colorcolumn=81,121
-    autocmd FileType php set commentstring=//%s
-    autocmd FileType php set keywordprg=~/bin/php_doc.sh
-    autocmd FileType php set makeprg=php\ -l\ %
-    autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
-    autocmd FileType php noremap <Leader>r :!php %<CR>
-    autocmd FileType php noremap <Leader>R :!php -l %<CR>
+	autocmd!
+	autocmd FileType php set expandtab
+	autocmd FileType php set colorcolumn=81,121
+	autocmd FileType php set commentstring=//%s
+	autocmd FileType php set keywordprg=~/bin/php_doc.sh
+	autocmd FileType php set makeprg=php\ -l\ %
+	autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+	autocmd FileType php noremap <Leader>r :!php %<CR>
+	autocmd FileType php noremap <Leader>R :!php -l %<CR>
 augroup END
 
 augroup filetype_cs
-    autocmd!
-    autocmd FileType cs set commentstring=//%s
+	autocmd!
+	autocmd FileType cs set commentstring=//%s
 	" Don't autoselect first item in omnicomplete, show if only one item (for preview).
 	" Remove preview if you don't want to see any documentation whatsoever.
 	autocmd FileType cs set completeopt=longest,menuone,preview
@@ -166,18 +166,18 @@ augroup filetype_cs
 augroup END
 
 augroup filetype_javascript
-    autocmd!
-    autocmd FileType javascript set tabstop=4
-    autocmd FileType javascript set softtabstop=4
-    autocmd FileType javascript set shiftwidth=4
-    autocmd FileType javascript set expandtab
-    autocmd FileType javascript set colorcolumn=81,121
-    autocmd FileType javascript set commentstring=//%s
-    " autocmd FileType javascript set keywordprg=
-    autocmd FileType javascript set makeprg=./node_modules/.bin/eslint\ -f\ compact\ %
-    autocmd FileType javascript set errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %trror\ -\ %m,\%f:\ line\ %l\\,\ col\ %c\\,\ %tarning\ -\ %m,\%-G%.%#
-    " autocmd FileType javascript noremap <Leader>r :!node %<CR>
-    " autocmd FileType javascript noremap <Leader>R :!./node_modules/.bin/eslint\ %<CR>
+	autocmd!
+	autocmd FileType javascript set tabstop=2
+	autocmd FileType javascript set softtabstop=2
+	autocmd FileType javascript set shiftwidth=2
+	autocmd FileType javascript set expandtab
+	autocmd FileType javascript set colorcolumn=81,121
+	autocmd FileType javascript set commentstring=//%s
+	" autocmd FileType javascript set keywordprg=
+	autocmd FileType javascript set makeprg=./node_modules/.bin/eslint\ -f\ compact\ %
+	autocmd FileType javascript set errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %trror\ -\ %m,\%f:\ line\ %l\\,\ col\ %c\\,\ %tarning\ -\ %m,\%-G%.%#
+	" autocmd FileType javascript noremap <Leader>r :!node %<CR>
+	" autocmd FileType javascript noremap <Leader>R :!./node_modules/.bin/eslint\ %<CR>
 augroup END
 
 endif " has("autocmd")
@@ -201,7 +201,7 @@ endif
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
 " Mac Terminal Note
