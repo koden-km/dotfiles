@@ -1,60 +1,9 @@
 GIT_DIR_CACHE=""
 
-# Clone a repo from GitHub into the appropriate directory.
-function rclone {
-    local repo=$1
-    local dir="${GIT_DIR_GITHUB}/${repo}"
-
-    mkdir -p "$(dirname $dir)"
-    hub clone -p $repo $dir
-
-    rcd-reindex
-    rcd $repo
-}
-
-# Clone a repo from Stash into the appropriate directory.
-function rclone-cwx {
-    local repo=$1
-    local dir="${GIT_DIR_CWX}/${repo}"
-    local url="ssh://git@stash.codeworx.com.au:7999/${repo}.git"
-
-    mkdir -p "$(dirname $dir)"
-    git clone $url $dir
-
-    rcd-reindex
-    rcd $repo
-}
-
-# Clone a Go lang repo from GitHub into the appropriate directory.
-function rclone-go {
-    local repo=$1
-    local dir="${GIT_DIR_GITHUB_GO}/${repo}"
-
-    mkdir -p "$(dirname $dir)"
-    hub clone -p $repo $dir
-
-    rcd-reindex
-    rcd $repo
-}
 
 # Open coverage reports in a browser ...
 function rcov {
     open artifacts/tests/coverage/index.html
-}
-
-# Open a repo in the browser ...
-function ropen {
-    if ! (hub browse &> /dev/null); then
-        local repo=$(git-repo)
-        local project=$(dirname $repo)
-        local slug=$(basename $repo)
-        open https://stash.codeworx.com.au/projects/${project}/repos/${slug}/browse
-    fi
-}
-
-# Open a repo in Travis CI web interface ...
-function rtravis {
-    open https://travis-ci.org/$(git-repo)/builds
 }
 
 # Change directory into a git clone ...

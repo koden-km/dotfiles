@@ -111,7 +111,7 @@ function build-prompt {
         title="${title} - ${title_auth}"
     fi
 
-    PS1="\[\033]0;${title}\007\]$(color-dark-grey "\A")$auth $location$(color-dark-grey :) $(color-reset)"
+    PS1="\[\033]0;${title}\007\]$(color-dark-grey "\A")$auth $location$(color-dark-grey " $") $(color-reset)"
 
     ESCAPE_COLOR_CODES=false
 }

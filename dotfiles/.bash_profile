@@ -21,10 +21,6 @@ export DOTFILES_REPO="$HOME/dotfiles"
 
 export PATH="$HOME/bin:$PATH"
 
-# Go lang
-# Colon seperated list of a workspaces.
-#export GOPATH=$HOME/Development/Go
-
 # Source the library files ...
 for filename in $DOTFILES_REPO/lib/*.bash; do
     source $filename
