@@ -7,11 +7,12 @@ GIT_DIR_GITHUB="$HOME/GitHub"
 GIT_DIR_CWX="$HOME/WebDev"
 
 # Path for "rclone-go" to clone into ...
-GIT_DIR_GITHUB_GO="$HOME/Development/Go/src/github.com"
+#GIT_DIR_GITHUB_GO="$HOME/Development/Go/src/github.com"
 
 # Directories to search when using "rcd" ...
 # This probably wont work if any of the directory names contain spaces.
-GIT_DIR_LIST="$GIT_DIR_GITHUB $GIT_DIR_CWX $GIT_DIR_GITHUB_GO"
+#GIT_DIR_LIST="$GIT_DIR_GITHUB $GIT_DIR_CWX $GIT_DIR_GITHUB_GO"
+GIT_DIR_LIST="$GIT_DIR_GITHUB $GIT_DIR_CWX"
 
 # A space separated list of usernames considered to be "me" ...
 DEFAULT_USERNAMES="kevin kmillar"
@@ -22,7 +23,7 @@ export PATH="$HOME/bin:$PATH"
 
 # Go lang
 # Colon seperated list of a workspaces.
-export GOPATH=$HOME/Development/Go
+#export GOPATH=$HOME/Development/Go
 
 # Source the library files ...
 for filename in $DOTFILES_REPO/lib/*.bash; do
