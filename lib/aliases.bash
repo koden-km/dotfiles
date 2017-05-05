@@ -12,11 +12,14 @@ alias ctags-cpp='ctags -R --languages=C++'
 alias ctags-csharp='ctags -R --languages=C#'
 alias ctags-py='ctags -R --languages=Python'
 
-if [[ $(uname) == "Darwin" ]]; then
-    alias mac-clean-dsstore="find . -name '.DS_Store' -delete"
-    # fixing 'open with' duplicates may also need to: killall Finder
-    alias mac-fix-openwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
-fi
+# horrizonal line
+alias hr='eval "echo; printf '=%.0s' {1..$COLUMNS}; echo; echo"'
+
+#if [[ $(uname) == "Darwin" ]]; then
+#    alias mac-clean-dsstore="find . -name '.DS_Store' -delete"
+#    # fixing 'open with' duplicates may also need to: killall Finder
+#    alias mac-fix-openwith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
+#fi
 
 if [ -f ~/.aliases ]; then
     source ~/.aliases
