@@ -190,11 +190,25 @@ augroup filetype_coffee
 	autocmd FileType coffee set colorcolumn=81,121
 augroup END
 
+augroup filetype_go
+	autocmd!
+	autocmd FileType go set tabstop=4
+	autocmd FileType go set softtabstop=4
+	autocmd FileType go set shiftwidth=4
+	autocmd FileType go set noexpandtab
+	autocmd FileType go set colorcolumn=81,121
+augroup END
+
 endif " has("autocmd")
 
 " Convenient command to add standard PHP project paths for use with :find, :sfind, :tabfind
 if !exists(":PhpAddPaths")
 	command PhpAddPaths set path+=src/**,src-internal/**,src-generated/**,test/**,vendor/**/src/**,vendor/**/test/**
+endif
+
+" Convenient command to add standard Go project paths for use with :find, :sfind, :tabfind
+if !exists(":GoAddPaths")
+	command GoAddPaths set path+=src/**,./**
 endif
 
 " Convenient command to add standard CS project paths for use with :find, :sfind, :tabfind
