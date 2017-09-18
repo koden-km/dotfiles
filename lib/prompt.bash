@@ -1,7 +1,15 @@
-if [ $HAS_GIT ]; then
-    PROMPT_COMMAND="$PROMPT_COMMAND;build-prompt-git"
+if [ -n "$PROMPT_COMMAND" ]; then
+    if [ $HAS_GIT ]; then
+        PROMPT_COMMAND="$PROMPT_COMMAND;build-prompt-git"
+    else
+        PROMPT_COMMAND="$PROMPT_COMMAND;build-prompt"
+    fi
 else
-    PROMPT_COMMAND="$PROMPT_COMMAND;build-prompt"
+    if [ $HAS_GIT ]; then
+        PROMPT_COMMAND="build-prompt-git"
+    else
+        PROMPT_COMMAND="build-prompt"
+    fi
 fi
 
 if [[ ! "$PROMPT_USERNAMES" =~ (^| )"$USER"($| ) ]]; then
