@@ -72,6 +72,7 @@ set autoread
 set hidden
 set backspace=indent,eol,start
 set clipboard=unnamed
+set splitright
 set splitbelow
 
 " Searching
@@ -178,6 +179,15 @@ augroup filetype_javascript
 	autocmd FileType javascript set errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %trror\ -\ %m,\%f:\ line\ %l\\,\ col\ %c\\,\ %tarning\ -\ %m,\%-G%.%#
 	" autocmd FileType javascript noremap <Leader>r :!node %<CR>
 	" autocmd FileType javascript noremap <Leader>R :!./node_modules/.bin/eslint\ %<CR>
+augroup END
+
+augroup filetype_coffee
+	autocmd!
+	autocmd FileType coffee set tabstop=2
+	autocmd FileType coffee set softtabstop=2
+	autocmd FileType coffee set shiftwidth=2
+	autocmd FileType coffee set expandtab
+	autocmd FileType coffee set colorcolumn=81,121
 augroup END
 
 endif " has("autocmd")
