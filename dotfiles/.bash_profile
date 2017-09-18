@@ -1,35 +1,31 @@
-HISTCONTROL=ignoreboth
-
-# Path for "rclone" to clone into ...
-GIT_DIR_GITHUB="$HOME/GitHub"
-
-# Path for "rclone-cwx" to clone into ...
-GIT_DIR_CWX="$HOME/WebDev"
-
-# Path for "rclone-go" to clone into ...
-GIT_DIR_GITHUB_GO="$HOME/Development/Go/src/github.com"
-
-# Directories to search when using "rcd" ...
-# This probably wont work if any of the directory names contain spaces.
-GIT_DIR_LIST="$GIT_DIR_GITHUB $GIT_DIR_CWX $GIT_DIR_GITHUB_GO"
-
-# A space separated list of usernames considered to be "me" ...
-DEFAULT_USERNAMES="kevin kmillar"
-
+# A space separated list of usernames considered to be "me", that are not shown in the prompt ...
+export PROMPT_USERNAMES="kevin kmillar"
 export DOTFILES_REPO="$HOME/dotfiles"
-
+export HISTCONTROL="ignoreboth"
 export PATH="$HOME/bin:$PATH"
+export EDITOR="vim"
+export VISUAL="$EDITOR"
 
-# Go lang
-# Colon seperated list of a workspaces.
-export GOPATH=$HOME/Development/Go
+type -t git > /dev/null && export HAS_GIT=true
+type -t hub > /dev/null && export HAS_HUB=true
+type -t grit > /dev/null && export HAS_GRIT=true
+
+if BREW_PREFIX=$(brew --prefix 2> /dev/null); then
+    export HAS_BREW=true
+    export BREW_PREFIX="$BREW_PREFIX"
+fi
 
 # Source the library files ...
-for filename in $DOTFILES_REPO/lib/*.bash; do
-    source $filename
+for DOTFILES_FILE in $DOTFILES_REPO/lib/*.bash; do
+    source $DOTFILES_FILE
 done
+unset DOTFILES_FILE
 
-unset filename
+if [ -e "$BREW_PREFIX/etc/bash_completion" ]; then
+    source "$BREW_PREFIX/etc/bash_completion"
+fi
+
+[ $HAS_GRIT ] && eval "$(grit shell-integration)"
 
 ulimit -n 8192
 
@@ -37,5 +33,3 @@ ulimit -n 8192
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
-
-alias hr='eval "echo; printf '=%.0s' {1..$COLUMNS}; echo; echo"'

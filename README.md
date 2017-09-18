@@ -10,7 +10,6 @@ git clone git@github.com:koden-km/dotfiles.git
 ln -s dotfiles/dotfiles/.bash_profile
 # update configuration options in .bash_profile
 source ~/.bash_profile
-update-dotfiles
 
 # install vim plugins/bundles
 mkdir ~/.vim/bundle

@@ -20,9 +20,6 @@
 [color]
 	ui = auto
 
-;[format]
-	;pretty = %C(dim)%ci%C(reset) %C(dim)%p%C(reset) %C(cyan dim)%h%C(reset)%C(cyan)%d%C(reset) %C(yellow)|%C(reset) %s %C(dim)by %an %ar.%C(reset)
-
 [alias]
 	s = status
 	l = log --pretty='%C(dim)%ci%C(reset) %C(dim)%p%C(reset) %C(cyan dim)%h%C(reset)%C(cyan)%d%C(reset) %C(yellow)|%C(reset) %s %C(dim)by %an %ar.%C(reset)' -5
@@ -39,6 +36,9 @@
 
 [branch]
 	autosetuprebase = always
+
+[hub]
+	host = github.cwx.io
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

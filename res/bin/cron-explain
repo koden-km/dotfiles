@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Usage:
+# $ cron-explain "* * * * * foo"
+
+echo "$1" | crontab2english.pl -f
+
