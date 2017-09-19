@@ -31,6 +31,7 @@ Plugin 'Keithbsmiley/swift.vim'
 Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'OmniSharp/omnisharp-vim'
 " This should be good, but need to learn how to set it up.
 "Plugin 'vim-syntastic/syntastic'
