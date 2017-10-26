@@ -151,7 +151,7 @@ augroup filetype_php
 	autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
 	autocmd FileType php noremap <Leader>r :!php %<CR>
 	autocmd FileType php noremap <Leader>R :!php -l %<CR>
-	let g:ycm_auto_trigger = 0
+	autocmd FileType php let g:ycm_auto_trigger = 0
 augroup END
 
 augroup filetype_cs
