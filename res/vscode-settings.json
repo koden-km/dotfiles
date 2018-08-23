@@ -1,0 +1,48 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.autoClosingBrackets": false,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.roundedSelection": false,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.stablePeek": false,
+    "editor.fontSize": 13,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.leader": "\\",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.insert": "#404040",
+    "vim.statusBarColors.normal": "#404040",
+    "vim.statusBarColors.replace": "#404040",
+    "vim.statusBarColors.visual": "#404040",
+    "vim.statusBarColors.visualblock": "#404040",
+    "vim.statusBarColors.visualline": "#404040",
+    "window.restoreWindows": "all",
+    "window.zoomLevel": 0,
+    "csharp.referencesCodeLens.enabled": false,
+    "csharp.testsCodeLens.enabled": false,
+    "extensions.ignoreRecommendations": false,
+    "files.watcherExclude": {
+        // Default (original)
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        // Unity
+        "**/Library/**": true,
+        "**/ProjectSettings/**": true,
+        "**/Temp/**": true,
+    },
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#404040",
+        "statusBar.noFolderBackground": "#404040",
+        "statusBar.debuggingBackground": "#404040"
+    },
+    "workbench.startupEditor": "newUntitledFile"
+}
