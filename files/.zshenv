@@ -1,6 +1,6 @@
 if [[ $SHLVL = 1 ]]; then
   # load secure environment variables
-  #source "$HOME/.zshenv.secure"
+  source "$HOME/.zshenv.secure"
 
   export EDITOR="vim"
   export VISUAL="$EDITOR"
