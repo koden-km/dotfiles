@@ -1,4 +1,5 @@
 tap "jmalloc/grit"
+tap "raggi/ale"
 
 brew "colordiff"
 brew "composer"
@@ -8,6 +9,7 @@ brew "grit"
 brew "jq"
 brew "less"
 brew "node"
+brew "openssl-osx-ca", restart_service: :changed
 brew "php"
 brew "protobuf"
 brew "vim"
