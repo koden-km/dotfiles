@@ -1,9 +1,0 @@
-{
-    "defaults": {
-        "author-name": "Kevin Millar",
-        "author-homepage": "https://github.com/koden-km",
-        "author-email": "koden.km@gmail.com",
-        "github-account": "IcecaveStudios",
-        "vendor": "Icecave"
-    }
-}

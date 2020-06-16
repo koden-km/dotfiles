@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+set -e
+set -o pipefail
+
+# Permissions are elevated first to get all interactivity out of the way as soon
+# as possible. The -v flag causes sudo to update the credential cache without
+# executing a command.
+#
+# The while loop refreshes the credential cache every 60 seconds until this
+# process exits.
+echo "Elevating to superuser."
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+if ! pkgutil --pkg-info=com.apple.pkg.CLTools_Executables > /dev/null; then
+    echo "Installing Xcode command-line tools. Click 'install' when prompted..."
+    xcode-select --install > /dev/null
+fi
+while ! pkgutil --pkg-info=com.apple.pkg.CLTools_Executables > /dev/null; do
+    sleep 10
+    echo "Waiting for Xcode command-line tools to finish installing ..."
+done
+
+if hash brew 2>/dev/null; then
+    echo "Homebrew already installed."
+else
+    echo "Installing Homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if hash jq 2>/dev/null; then
+    echo "jq already installed."
+else
+    echo "Installing jq..."
+    brew install jq
+fi
+
+if hash mas 2>/dev/null; then
+    echo "mas already installed."
+else
+    echo "Installing mas..."
+    brew install mas
+fi
+
+if mas account; then
+    echo "App store signed in."
+else
+    echo "Sign in to the app store first."
+    mas open
+    open "x-apple.systempreferences:com.apple.preferences.AppleIDPrefPane"
+    exit 1
+fi
+
+# Use dotfiles in home dir for working copy and clone it using https
+DOTFILES_PATH="$HOME/dotfiles"
+DOTFILES_BRANCH="master"
+GH_USER="koden-km"
+
+if [[ -d "$DOTFILES_PATH" ]]; then
+    echo "Pulling $GH_USER/dotfiles..."
+    pushd "$DOTFILES_PATH" > /dev/null
+    git pull
+    popd > /dev/null
+else
+    echo "Cloning $GH_USER/dotfiles..."
+    git clone \
+        --branch "$DOTFILES_BRANCH" \
+        --single-branch "https://github.com/$GH_USER/dotfiles.git" \
+        "$DOTFILES_PATH"
+fi
+
+for FILE in "$HOME/dotfiles/setup/"*-*.bash; do
+    source "$FILE"
+done
+
+echo "Done. System must be restarted for some changes to take effect."

@@ -20,9 +20,20 @@
 [color]
 	ui = auto
 
+[color "diff"]
+	meta = dim
+	frag = dim
+	old = red
+	new = green
+
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+
 [alias]
 	s = status
-	l = log --pretty='%C(dim)%ci%C(reset) %C(dim)%p%C(reset) %C(cyan dim)%h%C(reset)%C(cyan)%d%C(reset) %C(yellow)|%C(reset) %s %C(dim)by %an %ar.%C(reset)' -5
+	l = log --pretty='%C(dim)%ci%C(reset) %C(dim)%p%C(reset) %C(cyan dim)%h%C(reset)%C(cyan)%d%C(reset) %C(yellow)|%C(reset) %s %C(dim)by %an %ar.%C(reset)' -10
 
 [push]
 	default = simple
@@ -36,9 +47,6 @@
 
 [branch]
 	autosetuprebase = always
-
-[hub]
-	host = github.cwx.io
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
