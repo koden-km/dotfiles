@@ -38,6 +38,9 @@
 [push]
 	default = simple
 
+[push]
+	ff = only
+
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
