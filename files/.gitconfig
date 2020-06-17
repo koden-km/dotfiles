@@ -38,7 +38,7 @@
 [push]
 	default = simple
 
-[push]
+[pull]
 	ff = only
 
 [filter "media"]
