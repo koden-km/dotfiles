@@ -15,6 +15,7 @@ source "$HOME/.functions.zsh"
 
 source-if-exists "$(brew --prefix)/etc/profile.d/z.sh"
 source-if-exists "$HOME/.zprezto/init.zsh"
+source-if-exists "$HOME/.zshrc.secure"
 
 eval "$(grit shell-integration)"
 
