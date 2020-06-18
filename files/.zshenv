@@ -15,5 +15,5 @@ if [[ $SHLVL = 1 ]]; then
   export PATH="$GOPATH/bin:$PATH"
 
   # export less flags
-  export LESS="--quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines  --window=-4"
+  export LESS="--no-init --quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --window=-4"
 fi
