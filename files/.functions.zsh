@@ -24,3 +24,20 @@ function git {
 function source-if-exists () {
   [ -f "$1" ] && source "$1"
 }
+
+function prompt_docker() {
+  if [[ -n "$HIVE_SWARM_NAME" ]]; then
+    p10k segment -b 1 -f 15 -t "$HIVE_SWARM_NAME"
+    return
+  fi
+
+  if [[ -z "$DOCKER_HOST" ]]; then
+    return
+  fi
+
+  if [[ "$DOCKER_HOST" == "unix:///var/run/docker.sock" ]]; then
+    return
+  fi
+
+  p10k segment -b 1 -f 15 -t "$DOCKER_HOST"
+}
