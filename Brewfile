@@ -4,6 +4,7 @@ tap "raggi/ale"
 brew "colordiff"
 brew "composer"
 brew "git"
+brew "git-lfs"  # will need to do: git lfs install
 brew "go"
 brew "grit"
 brew "jq"
