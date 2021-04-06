@@ -25,19 +25,16 @@ function source-if-exists () {
   [ -f "$1" ] && source "$1"
 }
 
-function prompt_docker() {
+function prompt_my_hivecontext() {
   if [[ -n "$HIVE_SWARM_NAME" ]]; then
-    p10k segment -b 1 -f 15 -t "$HIVE_SWARM_NAME"
-    return
+    p10k segment -i ' ' -b 15 -f 1 -t "$HIVE_SWARM_NAME"
+  elif [[ -n "$DOCKER_HOST" && "$DOCKER_HOST" != "unix:///var/run/docker.sock" ]]; then
+    p10k segment -i ' ' -b 15 -f 1 -t "$DOCKER_HOST"
   fi
+}
 
-  if [[ -z "$DOCKER_HOST" ]]; then
-    return
+function prompt_my_hiveselfcontext() {
+  if [[ -z "$HIVE_SWARM_NAME" && (( -z "$DOCKER_HOST" || "$DOCKER_HOST" == "unix:///var/run/docker.sock" )) ]]; then
+    p10k segment -i ' ' -b 15 -f 8 -t self
   fi
-
-  if [[ "$DOCKER_HOST" == "unix:///var/run/docker.sock" ]]; then
-    return
-  fi
-
-  p10k segment -b 1 -f 15 -t "$DOCKER_HOST"
 }
