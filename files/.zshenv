@@ -7,8 +7,11 @@ if [[ $SHLVL = 1 ]]; then
 
   # Golang-related environment variables
   export GOPATH="$HOME/go"
-  export GOPROXY="direct"
-  export GOSUMDB="off"
+  if [[ -n "$GOPROXY" ]]; then
+    export GOPROXY="direct"
+  fi
+  # note: do not set GOSUMDB
+  #export GOSUMDB="off"
 
   # local bin and GOBIN path
   export PATH="$HOME/bin:$PATH"
