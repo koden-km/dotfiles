@@ -19,16 +19,18 @@ brew "watch"
 brew "wget"
 brew "yarn"
 brew "youtube-dl"
-brew "zsh"
+#brew "zsh"
 
 cask "docker"
 cask "dotnet-sdk"
-cask "epic-games"
+#cask "epic-games"
 cask "firefox"
 #cask "gog-galaxy"
-cask "google-backup-and-sync"
+#cask "google-backup-and-sync"
+cask "google-drive"
 cask "google-chrome"
 cask "iterm2"
+cask "joplin"
 cask "macvim"
 cask "minecraft"
 cask "scroll-reverser"
@@ -40,7 +42,7 @@ cask "unity-hub"
 cask "visual-studio-code"
 cask "vlc"
 
-mas "Evernote", id: 406056744
+#mas "Evernote", id: 406056744
 mas "Magnet", id: 441258766
 mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
