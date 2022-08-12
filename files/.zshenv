@@ -7,7 +7,7 @@ if [[ $SHLVL = 1 ]]; then
 
   # Golang-related environment variables
   export GOPATH="$HOME/go"
-  if [[ -n "$GOPROXY" ]]; then
+  if [ -z ${GOPROXY} ]; then
     export GOPROXY="direct"
   fi
   # note: do not set GOSUMDB
