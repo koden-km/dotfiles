@@ -2,6 +2,9 @@
 	name = Kevin Millar
 	email = koden.km@gmail.com
 
+[include]
+    path = ~/.gitconfig.private
+
 [core]
 	autocrlf = input
 	editor = vim
