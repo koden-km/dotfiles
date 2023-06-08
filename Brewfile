@@ -1,49 +1,58 @@
 tap "jmalloc/grit"
-tap "raggi/ale"
+tap "raggi/ale"  # for openssl-osx-ca
 
 brew "colordiff"
-brew "composer"
+#brew "composer"
 brew "git"
 brew "git-lfs"  # will need to do: git lfs install
 brew "go"
 brew "grit"
-brew "jq"
+brew "jq"  # can't remember what this is for
 brew "less"
+#brew "minikube"
 brew "mono"
 brew "node"
 brew "openssl-osx-ca", restart_service: :changed
-brew "php"
+#brew "php"
 brew "protobuf"
+brew "tree"
 brew "vim"
 brew "watch"
 brew "wget"
 brew "yarn"
 brew "youtube-dl"
-#brew "zsh"
+brew "zsh"
 
+#cask "android-studio"
+cask "around"
+cask "blender"
+cask "discord"
 cask "docker"
 cask "dotnet-sdk"
 #cask "epic-games"
 cask "firefox"
+cask "font-meslo-for-powerline"
+cask "gimp"
 #cask "gog-galaxy"
 #cask "google-backup-and-sync"
-cask "google-drive"
+#cask "google-drive"
 cask "google-chrome"
 cask "iterm2"
 cask "joplin"
+#cask "kdenlive"
 cask "macvim"
 #cask "minecraft"
-cask "scroll-reverser"
-cask "slack"
+#cask "scroll-reverser"
+#cask "sidequest"
 cask "spotify"
 cask "steam"
 #cask "thunderbird"
+cask "tunnelblick"
 cask "unity-hub"
 cask "visual-studio-code"
 cask "vlc"
 
-#mas "Evernote", id: 406056744
 mas "Magnet", id: 441258766
-mas "Pixelmator", id: 407963104
+#mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
-#mas "Xcode", id: 497799835
+mas "Xcode", id: 497799835
