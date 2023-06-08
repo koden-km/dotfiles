@@ -30,6 +30,3 @@ alias ll='ls -alG'
 alias less='less -R'
 alias grep='grep --color=auto'
 alias topm='top -o mem'
-
-# Fun aliases
-alias multi-zork='nc multizork.icculus.org 23'
