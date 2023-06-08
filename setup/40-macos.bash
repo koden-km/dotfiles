@@ -29,7 +29,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Touch Bar: Control strip mini customization
-defaults write com.apple.controlstrip MiniCustomized "(com.apple.system.media-play-pause, com.apple.system.volume, com.apple.system.mute, com.apple.system.notification-center)"
+#defaults write com.apple.controlstrip MiniCustomized "(com.apple.system.media-play-pause, com.apple.system.volume, com.apple.system.mute, com.apple.system.notification-center)"
 
 # Trackpad: Enable tap to click
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
