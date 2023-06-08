@@ -3,7 +3,7 @@
 	email = koden.km@gmail.com
 
 [include]
-    path = ~/.gitconfig.private
+	path = ~/.gitconfig.private
 
 [core]
 	autocrlf = input
@@ -11,8 +11,12 @@
 	excludesfile = ~/.gitignore.global
 	whitespace = trailing-space,space-before-tab,tabwidth=4
 
+[init]
+	defaultBranch = main
+
 [diff]
 	renames = true
+	wsErrorHighlight = all
 
 [fetch]
 	prune = true
@@ -45,15 +49,15 @@
 [pull]
 	ff = only
 
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-
 [tag]
 	sort = version:refname
 
 [branch]
 	autosetuprebase = always
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
