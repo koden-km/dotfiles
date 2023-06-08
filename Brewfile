@@ -10,7 +10,7 @@ brew "grit"
 brew "jq"  # can't remember what this is for
 brew "less"
 #brew "minikube"
-brew "mono"
+#brew "mono"  # doesn't yet support Apple Silicon's Ventura?
 brew "node"
 brew "openssl-osx-ca", restart_service: :changed
 #brew "php"
