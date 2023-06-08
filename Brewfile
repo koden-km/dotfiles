@@ -1,3 +1,4 @@
+tap "homebrew/cask-fonts"
 tap "jmalloc/grit"
 tap "raggi/ale"  # for openssl-osx-ca
 
@@ -16,7 +17,7 @@ brew "openssl-osx-ca", restart_service: :changed
 #brew "php"
 brew "protobuf"
 brew "tree"
-brew "vim"
+#brew "vim"  # conflicts with MacVim
 brew "watch"
 brew "wget"
 brew "yarn"
