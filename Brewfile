@@ -16,6 +16,7 @@ brew "node"
 brew "openssl-osx-ca", restart_service: :changed
 #brew "php"
 brew "protobuf"
+#brew remotemobprogramming/brew/mob
 brew "tree"
 #brew "vim"  # conflicts with MacVim
 brew "watch"
