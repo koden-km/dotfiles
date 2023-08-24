@@ -5,6 +5,7 @@
 .LSOverride
 .Spotlight-V100
 .Trashes
+.vscode
 Desktop.ini
 Thumbs.db
 /tags
