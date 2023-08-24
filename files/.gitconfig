@@ -2,7 +2,10 @@
 	name = Kevin Millar
 	email = koden.km@gmail.com
 
-[include]
+#[include]
+    #path = ~/.gitconfig.private
+
+[includeIf "gitdir:~/grit/github.cwx.io/"]
 	path = ~/.gitconfig.private
 
 [core]
