@@ -2,8 +2,9 @@ tap "homebrew/cask-fonts"
 tap "jmalloc/grit"
 tap "raggi/ale"  # for openssl-osx-ca
 
+brew "adr-tools"  # tools for working with Architecture Decision Records
 brew "colordiff"
-#brew "composer"
+#brew "composer"  # PHP
 brew "git"
 brew "git-lfs"  # will need to do: git lfs install
 brew "go"
@@ -22,15 +23,15 @@ brew "tree"
 brew "watch"
 brew "wget"
 brew "yarn"
-brew "youtube-dl"
+#brew "youtube-dl"  # deprecated?
 brew "zsh"
+#brew "watchman"  # for ReactNative Expo
 
 #cask "android-studio"
-cask "around"
 cask "blender"
 cask "discord"
-cask "docker"
-cask "dotnet-sdk"
+#cask "docker"
+#cask "dotnet-sdk"
 #cask "epic-games"
 cask "firefox"
 cask "font-meslo-for-powerline"
@@ -49,10 +50,13 @@ cask "macvim"
 cask "spotify"
 cask "steam"
 #cask "thunderbird"
-cask "tunnelblick"
-cask "unity-hub"
+#cask "tunnelblick"
+#cask "unity-hub"
 cask "visual-studio-code"
 cask "vlc"
+#cast "coscreen"  # Screenshare collaboration tool
+#cask "ghostty"  # Terminal
+#cask "microsoft-teams"  # MS Teams video call junk. I think it added "microsoft-auto-update" as part of install.
 
 mas "Magnet", id: 441258766
 #mas "Pixelmator", id: 407963104
