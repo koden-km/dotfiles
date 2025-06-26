@@ -1,12 +1,11 @@
 [user]
 	name = Kevin Millar
 	email = koden.km@gmail.com
+	signingkey = /Users/kevin/.ssh/id_ed25519.pub
 
+# Work repo's...
 #[include]
     #path = ~/.gitconfig.private
-
-[includeIf "gitdir:~/grit/github.cwx.io/"]
-	path = ~/.gitconfig.private
 
 [core]
 	autocrlf = input
@@ -54,6 +53,10 @@
 
 [tag]
 	sort = version:refname
+	gpgsign = true
+
+[commit]
+	gpgsign = true
 
 [branch]
 	autosetuprebase = always
@@ -67,3 +70,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed-signers
