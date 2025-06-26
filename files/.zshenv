@@ -8,7 +8,7 @@ if [[ $SHLVL = 1 ]]; then
   # Golang-related environment variables
   export GOPATH="$HOME/go"
   if [ -z ${GOPROXY} ]; then
-    export GOPROXY="direct"
+    export GOPROXY="https://proxy.golang.org,direct"
   fi
   # note: do not set GOSUMDB
   #export GOSUMDB="off"
@@ -18,5 +18,7 @@ if [[ $SHLVL = 1 ]]; then
   export PATH="$GOPATH/bin:$PATH"
 
   # export less flags
-  export LESS="--no-init --quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --window=-4"
+  #export LESS="--no-init --quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --window=-4"
+  # removed `--chop-long-lines` to make `--quit-if-one-screen` behave correctly.
+  export LESS="--no-init --quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --window=-4"
 fi
