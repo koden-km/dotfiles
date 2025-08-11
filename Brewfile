@@ -26,6 +26,7 @@ brew "yarn"
 #brew "youtube-dl"  # deprecated?
 brew "zsh"
 #brew "watchman"  # for ReactNative Expo
+#brew docker-compose  # for Docker (added while trying kafkajs for Dabble)
 
 #cask "android-studio"
 cask "blender"
@@ -57,6 +58,7 @@ cask "vlc"
 #cast "coscreen"  # Screenshare collaboration tool
 #cask "ghostty"  # Terminal
 #cask "microsoft-teams"  # MS Teams video call junk. I think it added "microsoft-auto-update" as part of install.
+#cask "zoom"  # Video call thing
 
 mas "Magnet", id: 441258766
 #mas "Pixelmator", id: 407963104
