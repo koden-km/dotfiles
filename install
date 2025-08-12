@@ -28,12 +28,13 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-if hash jq 2>/dev/null; then
-    echo "jq already installed."
-else
-    echo "Installing jq..."
-    brew install jq
-fi
+# can't remember what this is for
+# if hash jq 2>/dev/null; then
+#     echo "jq already installed."
+# else
+#     echo "Installing jq..."
+#     brew install jq
+# fi
 
 if hash mas 2>/dev/null; then
     echo "mas already installed."

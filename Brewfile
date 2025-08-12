@@ -9,7 +9,7 @@ brew "git"
 brew "git-lfs"  # will need to do: git lfs install
 brew "go"
 brew "grit"
-brew "jq"  # can't remember what this is for
+#brew "jq"  # can't remember what this is for
 brew "less"
 #brew "minikube"
 #brew "mono"  # doesn't yet support Apple Silicon's Ventura?
@@ -26,7 +26,7 @@ brew "yarn"
 #brew "youtube-dl"  # deprecated?
 brew "zsh"
 #brew "watchman"  # for ReactNative Expo
-#brew docker-compose  # for Docker (added while trying kafkajs for Dabble)
+#brew "docker-compose"  # for Docker
 
 #cask "android-studio"
 cask "blender"
@@ -57,10 +57,10 @@ cask "visual-studio-code"
 cask "vlc"
 #cast "coscreen"  # Screenshare collaboration tool
 #cask "ghostty"  # Terminal
-#cask "microsoft-teams"  # MS Teams video call junk. I think it added "microsoft-auto-update" as part of install.
+#cask "microsoft-teams"  # MS Teams video call. I think it added "microsoft-auto-update" as part of install.
 #cask "zoom"  # Video call thing
 
-mas "Magnet", id: 441258766
+#mas "Magnet", id: 441258766  # No longer needed in newer macOS
 #mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
 mas "Xcode", id: 497799835
