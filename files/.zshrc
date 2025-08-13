@@ -20,7 +20,9 @@ source-if-exists "$HOME/.zprezto/init.zsh"
 source-if-exists "$HOME/.zshrc.secure"
 source-if-exists "$HOME/.p10k.zsh"
 
-eval "$(grit shell-integration)"
+if command -v grit &>/dev/null; then
+    eval "$(grit shell-integration)"
+fi
 
 ssh-add -A 2>/dev/null
 

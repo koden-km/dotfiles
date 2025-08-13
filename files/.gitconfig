@@ -3,7 +3,7 @@
 	email = koden.km@gmail.com
 	signingkey = /Users/kevin/.ssh/id_ed25519.pub
 
-# Work repo's...
+# Private/work repo config...
 #[include]
     #path = ~/.gitconfig.private
 

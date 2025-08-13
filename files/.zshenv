@@ -1,6 +1,6 @@
 if [[ $SHLVL = 1 ]]; then
   # load secure environment variables
-  source "$HOME/.zshenv.secure"
+  [ -f "$HOME/.zshenv.secure" ] && source "$HOME/.zshenv.secure"
 
   export EDITOR="vim"
   export VISUAL="$EDITOR"
@@ -17,8 +17,9 @@ if [[ $SHLVL = 1 ]]; then
   export PATH="$HOME/bin:$PATH"
   export PATH="$GOPATH/bin:$PATH"
 
+  # Flutter related paths
+  # export PATH="$HOME/Development/sdk/flutter/bin:$PATH"
+
   # export less flags
-  #export LESS="--no-init --quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --window=-4"
-  # removed `--chop-long-lines` to make `--quit-if-one-screen` behave correctly.
   export LESS="--no-init --quit-if-one-screen --hilite-search --hilite-unread --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --window=-4"
 fi
