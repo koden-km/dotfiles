@@ -9,7 +9,8 @@ brew "git"
 brew "git-lfs"  # will need to do: git lfs install
 brew "go"
 brew "grit"
-#brew "jq"  # can't remember what this is for
+brew "jq"  # for JSON querying
+brew "yq"  # for YAML querying
 brew "less"
 #brew "minikube"
 #brew "mono"  # doesn't yet support Apple Silicon's Ventura?
