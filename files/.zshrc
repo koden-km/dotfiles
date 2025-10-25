@@ -26,6 +26,10 @@ fi
 
 ssh-add -A 2>/dev/null
 
+# Godot VR Quest Dev / Android - Java via openjdk
+# Didn't replace Apple's placeholder `java` if done in ~/.zshenv due to being later in $PATH
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
 # Aliases
 alias ls='ls -G'
 alias ll='ls -alG'

@@ -17,6 +17,10 @@ if [[ $SHLVL = 1 ]]; then
   export PATH="$HOME/bin:$PATH"
   export PATH="$GOPATH/bin:$PATH"
 
+  # Godot VR Quest Dev / Android - Java via openjdk
+  # Does't replace Apple's placeholder `java` if done in ~/.zshenv due to being later in $PATH
+  #export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
   # Flutter related paths
   # export PATH="$HOME/Development/sdk/flutter/bin:$PATH"
 

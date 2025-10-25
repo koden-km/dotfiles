@@ -28,8 +28,10 @@ brew "yarn"
 brew "zsh"
 #brew "watchman"  # for ReactNative Expo
 #brew "docker-compose"  # for Docker
+brew "openjdk@17"  # for Godot VR Quest dev
 
-#cask "android-studio"
+cask "android-studio"  # for Godot VR Quest dev
+cask "android-platform-tools"  # for Godot VR Quest dev
 cask "blender"
 cask "discord"
 #cask "docker"
